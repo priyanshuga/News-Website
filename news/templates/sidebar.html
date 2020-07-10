@@ -1,0 +1,13 @@
+
+				<!--__--__--__--  S I D E B A R --__--__--__--__-->
+				<div id="sidebar">
+					<aside>
+						<h1>Recent Posts</h1>
+						<ul>
+							{% for obj in recent %}
+								<li><a href="{% url 'fullwidth' obj.slug %}">{{obj.title}}</a></li>
+							{% endfor %}					
+						</ul>
+					</aside>
+				</div>
+			</section>

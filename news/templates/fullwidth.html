@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+			<!--__--__--__--__--  M A I N   C O N T E N T  --__--__--__--___--__--__-->
+			<section>
+				<article id="singlepost">
+					<h1><a href="#">{{news.title}}</a></h1>
+					<h2>Posted By: Admin on {{news.created}}</h2>
+                    <div id="short">
+                        <p><h2>{{news.short_desc}}<h2></p>
+                    </div>
+					<img src="{{news.image1.url}}" width="600" alt="image error" />
+					<div id="desc">
+						<pre>{{news.decription}}</pre>
+					</div>
+					<br>
+					<img src="{{news.image2.url}}" style="vertical-align:middle" width="600" alt="image error" />
+					</article>
+{% include 'sidebar.html' %}
+{% endblock body %}
+
+		
+			
+    
+    

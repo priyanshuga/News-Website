@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <!--__--__--__--__--  T H E    S L I D E R --__--__--__--___--__--__--__-->
+			<div class="slider-wrapper theme-default">
+				<div id="slider" class="nivoSlider">
+					{% for obj in news %}
+						{% if obj.slider %}
+							<a href="{% url 'fullwidth' obj.slug %}"><img src="{{obj.image1.url}}" alt="" title="{{obj.title}}" width="950" height="280"/></a>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+			<script type="text/javascript">
+			$(window).load(function() {
+				$('#slider').nivoSlider({pauseTime: 6000,});
+			});
+			</script>
+            <div id ='support'>
+                <a href="https://milaap.org/fundraisers/support-the-social-bugg"><h1>Support The Social Bugg. Make your contribution today>></h1></a>
+            </div>
+
+			<!--__--__--__--__--  M A I N   C O N T E N T  --__--__--__--___--__--__-->
+			<section>
+				<div id="line">
+					<div class="dline"></div>
+					<h1>Trending Today</h1>
+					<div class="dline"></div>
+				</div>
+				<div id="ourserv">
+						<table>
+							{% for obj in news_td %}
+								<article>
+									<th>
+										<img src="{{obj.image1.url}}" width="275" height="140" alt="" />
+										<h1>{{obj.title}}</h1>
+										<a href="{% url 'fullwidth' obj.slug %}" class="rm">Read More</a>
+									</th>
+								</article>
+							{% endfor %}
+						</table>
+				</div>
+				<div id="sline">
+					<div class="sdline"></div>
+					<h1>Top Trending</h1>
+					<div class="sdline"></div>
+				</div>
+				<div id="ourserv">
+						<table>
+							{% for obj in news_tp %}
+								<article>
+									<th>
+										<img src="{{obj.image1.url}}" width="270" height="140" alt="" />
+										<h1>{{obj.title}}</h1>
+										<a href="{% url 'fullwidth' obj.slug %}" class="rm">Read More</a>
+									</th>						
+								</airtcle>					
+							{% endfor %}
+						</table>
+					<div id="latestp">
+						<airtcle>
+							<br><br/><br>
+							<iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="850px" height="600px"></iframe>
+						</airtcle>
+					</div>
+				</div>
+			</section>
+{% endblock body %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+			<!--__--__--__--__--  M A I N   C O N T E N T  --__--__--__--___--__--__-->
+			<section>
+				<!--__--__--__-- A R T I C L E S --__--__--__--__-->
+				<div id="articles">
+					<article>
+						{% for obj in news %}
+							<h1><a href="{% url 'fullwidth' obj.slug %}">{{ obj.title }}</a></h1>
+							<h2>Posted By: Admin On {{ obj.created }}.</h2>
+							<img src="{{obj.image1.url}}" width="600" height="300" alt="" />
+							<p>{{obj.short_desc}} <a class="continue" href="{% url 'fullwidth' obj.slug %}">Continue Reading &rarr;</a></p>
+							<br>
+						{% endfor %}	
+					</article>
+					<br>
+					<br/>
+					<div class="pagination">
+						<a href="?page=1">&laquo;</a>
+						{% if news.has_previous %}
+							<a href="?page={{ news.previous_page_number }}">{{ news.previous_page_number }}</a>
+						{% endif %}
+						<a class="active" href="?page={{ news.number }}">{{ news.number }}</a>
+						{% if news.has_next %}
+							<a href="?page={{ news.next_page_number }}">{{ news.next_page_number }}</a>
+						{% endif %}
+						<a href="?page={{ news.paginator.num_pages }}">&raquo;</a>
+					</div>
+				</div>
+                {% include 'sidebar.html' %}
+            </section>
+{% endblock body %}
