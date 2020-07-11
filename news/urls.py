@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from news import views
 from django.conf import settings
 from django.conf.urls.static import static
+from news import views
+
 
 
 
@@ -28,7 +29,8 @@ urlpatterns = [
     path('blog/<str:category>', views.blog, name='blog'),
     path('terms/', views.terms, name='terms'),
     path('privacy/', views.privacy, name='privacy'),
-    path('search/',views.search, name='search'),
+    path('search/', views.search, name='search'),
+    path('notfound/', views.notfound, name='notfound'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

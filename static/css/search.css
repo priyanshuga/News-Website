@@ -9,10 +9,21 @@ body {
 #articles h1{
     font-size: 38px !important;
 }
+
+
+th h1{
+	font-family: sans-serif !important;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	font-size: 28px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+}
 form{
-    position: absolute;
-    top: 35%;
-    left: 35%;
+    position: relative;
+    margin-top: 40px;
+    margin-left: 60px;
     transform: translate(-28%,-50%);
     transition: all 1s;
     width: 50px;

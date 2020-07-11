@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from news.models import News
 from django.core.paginator import Paginator
 from django.views.generic import ListView
 from django.db.models import Q
+from django.http import HttpResponseRedirect
 
 def thesocialbugg(request):
     news = News.objects.all()
@@ -37,8 +38,16 @@ def search(request):
         news_title =  request.GET.get('s') # do some research what it does       
         try:
             status = News.objects.filter(title__icontains=news_title) # filter returns a list so you might consider skip except part
-            return render(request,"search.html",{"news":status,'recent':recent})
         except:
-            return render(request,"search.html",{'recent':recent})
+            return redirect(request,"notfound.html",{'recent':recent})
     else:
         return render(request, 'search.html', {'recent':recent})
+
+    if status:
+        return render(request,'search.html',{'news':status,'recent':recent})
+    else:
+        return HttpResponseRedirect("/notfound/")
+
+def notfound(request):
+    recent = News.objects.all().order_by('-created')[0:5]
+    return render(request,'notfound.html',{'recent':recent})

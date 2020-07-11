@@ -5,11 +5,9 @@
                     <!--__--__--__-- A R T I C L E S --__--__--__--__-->
                     <table>
                         <th>
-                            <div = "airticles"
                                 <article>
                                     <h1>Search Here>></h1>
                                 </article>
-                            </div>
                         </th>
                             <link rel="stylesheet" href="{% static "css/search.css" %}?20590300" type="text/css" media="screen" />
                             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -20,25 +18,11 @@
                             </form>
                         </th>
                     </table>
-                    {% if news %}
-                        {% for obj in news %}
-                            <div id="articles">
-					             <article>
-                                    <h1>  </h1>
-                                    <h1><a href="{% url 'fullwidth' obj.slug %}">{{ obj.title }}</a></h1>
-                                    <h2>Posted By: Admin On {{ obj.created }}.</h2>
-                                    <img src="{{obj.image1.url}}" width="600" height="300" alt="" />
-                                    <p>{{obj.short_desc}} <a class="continue" href="{% url 'fullwidth' obj.slug %}">Continue Reading &rarr;</a></p>
-					            </article>
-                            </div>
-                        {% endfor %}
-                    {% else %}
                         <div id="articles">
 					            <article>
-                                    <h1>                                    </h1>
+                                    <h1><a href="#">thing you have searched is not available...please try searching again with correct spelling... :-)</a></h1>
                                 </article>
                         </div>
-                    {% endif %}
                     {% include 'sidebar.html' %}
                 </section>
 {% endblock body %}

@@ -19,9 +19,9 @@ TRENDING_CHOICES = (
 )
 
 class News(models.Model):
-    title = models.CharField(max_length=200)
-    short_desc = models.CharField(max_length=500)
-    decription = models.TextField(max_length=2000)
+    title = models.CharField(max_length=500)
+    short_desc = models.CharField(max_length=1000)
+    decription = models.TextField(max_length=10000)
     image1 = models.ImageField()
     image2 = models.ImageField()
     category = models.CharField(choices=CATEGORY_CHOICES , max_length=1 , default=0)
@@ -59,5 +59,3 @@ def slug_save(obj):
             if slug_is_wrong:
                 # create another slug and check it again
                 obj.slug = get_random_string(5)
-
-
