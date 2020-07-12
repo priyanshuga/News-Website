@@ -28,9 +28,8 @@ class News(models.Model):
     created = models.DateTimeField(default=timezone.now)
     slider = models.BooleanField(default=False)
 
-    slug = models.SlugField(max_length=50,blank=True,unique=True)
+    slug = models.SlugField(max_length=50,unique=True)
 
     
     def __str__(self):
         return self.title
-
