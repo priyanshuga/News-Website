@@ -1,14 +1,14 @@
 from django.shortcuts import render,redirect
-from news.models import News
+from news.models import News, Slider, top_trending, trending_today
 from django.core.paginator import Paginator
 from django.views.generic import ListView
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 
 def thesocialbugg(request):
-    news = News.objects.all()
-    news_tp = News.objects.filter(trending='tp')[0:3]
-    news_td = News.objects.filter(trending='td')[0:3]
+    news = Slider.objects.all()
+    news_tp = top_trending.objects.all()[0:3]
+    news_td = trending_today.objects.all()[0:3]
     return render(request, 'main.html', {'news_td':news_td , 'news_tp':news_tp , 'news':news })
 
 def fullwidth(request,slug):

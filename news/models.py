@@ -12,24 +12,40 @@ CATEGORY_CHOICES = (
     ('r','REVIEWS'),
 )
 
-TRENDING_CHOICES = (
-    ('td','TRENDING TODAY '),
-    ('tp','TOP TRENDING'),
-    ('no','None')
-)
-
 class News(models.Model):
     title = models.CharField(max_length=500)
     short_desc = models.CharField(max_length=1000)
     decription = models.TextField(max_length=10000)
-    image1 = models.ImageField()
+    image = models.ImageField()
     category = models.CharField(choices=CATEGORY_CHOICES , max_length=1 , default=0)
-    trending = models.CharField(choices=TRENDING_CHOICES , max_length=2 , default=0) 
     created = models.DateTimeField(default=timezone.now)
-    slider = models.BooleanField(default=False)
 
     slug = models.SlugField(max_length=50,unique=True)
 
     
+    def __str__(self):
+        return self.title
+
+class Slider(models.Model):
+    title = models.CharField(max_length=500)
+    image_size_950x280 = models.ImageField()
+    slug = models.SlugField(max_length=50,unique=True)
+
+    def __str__(self):
+        return self.title
+
+class trending_today(models.Model):
+    title = models.CharField(max_length=500)
+    image = models.ImageField()
+    slug = models.SlugField(max_length=50,unique=True)
+    
+    def __str__(self):
+        return self.title
+
+class top_trending(models.Model):
+    title = models.CharField(max_length=500)
+    image = models.ImageField()
+    slug = models.SlugField(max_length=50,unique=True)
+
     def __str__(self):
         return self.title
