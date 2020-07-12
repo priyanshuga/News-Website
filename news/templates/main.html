@@ -24,7 +24,7 @@
 			<section>
 				<div id="line">
 					<div class="dline"></div>
-					<h1>Trending Today</h1>
+					<h1><span>Trending</span> Today</h1>
 					<div class="dline"></div>
 				</div>
 				<div id="ourserv">
@@ -32,8 +32,8 @@
 							{% for obj in news_td %}
 								<article>
 									<th>
-										<img src="{{obj.image1.url}}" width="275" height="140" alt="" />
-										<h1>{{obj.title}}</h1>
+										<a href="{% url 'fullwidth' obj.slug %}"><img src="{{obj.image1.url}}" width="275" height="140" alt="" /></a>
+										<a href="{% url 'fullwidth' obj.slug %}"><h1>{{obj.title}}</h1></a>
 										<a href="{% url 'fullwidth' obj.slug %}" class="rm">Read More</a>
 									</th>
 								</article>
@@ -42,7 +42,7 @@
 				</div>
 				<div id="sline">
 					<div class="sdline"></div>
-					<h1>Top Trending</h1>
+					<h1>Top <span>Trending</span></h1>
 					<div class="sdline"></div>
 				</div>
 				<div id="ourserv">
@@ -50,8 +50,8 @@
 							{% for obj in news_tp %}
 								<article>
 									<th>
-										<img src="{{obj.image1.url}}" width="270" height="140" alt="" />
-										<h1>{{obj.title}}</h1>
+										<a href="{% url 'fullwidth' obj.slug %}"><img src="{{obj.image1.url}}" width="270" height="140" alt="" /></a>
+										<a href="{% url 'fullwidth' obj.slug %}"><h1>{{obj.title}}</h1></a>
 										<a href="{% url 'fullwidth' obj.slug %}" class="rm">Read More</a>
 									</th>						
 								</airtcle>					

@@ -44,9 +44,13 @@ def search(request):
         return render(request, 'search.html', {'recent':recent})
 
     if status:
+        paginator = Paginator(status,4)
+        page = request.GET.get('page')
+        status = paginator.get_page(page) 
         return render(request,'search.html',{'news':status,'recent':recent})
     else:
         return HttpResponseRedirect("/notfound/")
+    
 
 def notfound(request):
     recent = News.objects.all().order_by('-created')[0:5]

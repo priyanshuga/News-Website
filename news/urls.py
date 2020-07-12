@@ -23,7 +23,7 @@ from news import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('ops/', admin.site.urls),
     path('', views.thesocialbugg, name='thesocialbugg'),
     path('fullwidth/<slug>', views.fullwidth, name='fullwidth'),
     path('blog/<str:category>', views.blog, name='blog'),

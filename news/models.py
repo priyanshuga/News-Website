@@ -23,39 +23,14 @@ class News(models.Model):
     short_desc = models.CharField(max_length=1000)
     decription = models.TextField(max_length=10000)
     image1 = models.ImageField()
-    image2 = models.ImageField()
     category = models.CharField(choices=CATEGORY_CHOICES , max_length=1 , default=0)
     trending = models.CharField(choices=TRENDING_CHOICES , max_length=2 , default=0) 
     created = models.DateTimeField(default=timezone.now)
     slider = models.BooleanField(default=False)
 
-    slug = models.SlugField(max_length=5,blank=True,) # blank if it needs to be migrated to a model that didn't already have this 
-  # ...
-    def save(self, *args, **kwargs):
-        #""" Add Slug creating/checking to save method. """
-        slug_save(self) # call slug_save, listed below
-        super(News, self).save(*args, **kwargs)
+    slug = models.SlugField(max_length=50,blank=True,unique=True)
 
     
     def __str__(self):
         return self.title
 
-
-    # ...
-def slug_save(obj):
-    #A function to generate a 5 character slug and see if it has been used and contains naughty words."""
-    if not obj.slug: # if there isn't a slug
-        obj.slug = get_random_string(5) # create one
-        slug_is_wrong = True  
-        while slug_is_wrong: # keep checking until we have a valid slug
-            slug_is_wrong = False
-            other_objs_with_slug = type(obj).objects.filter(slug=obj.slug)
-            if len(other_objs_with_slug) > 0:
-                # if any other objects have current slug
-                slug_is_wrong = True
-            naughty_words = ['thesocialbugg','fuck']
-            if obj.slug in naughty_words:
-                slug_is_wrong = True
-            if slug_is_wrong:
-                # create another slug and check it again
-                obj.slug = get_random_string(5)
