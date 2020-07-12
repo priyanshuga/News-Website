@@ -4,11 +4,11 @@ from django.utils import timezone
 from django.utils.crypto import get_random_string
 
 CATEGORY_CHOICES = (
-    ('p','POLITICS'),
+    ('p','NEWS'),
     ('y','YOUTH'),
     ('e','ENTERTAINMENT'),
     ('c','COVID-19'),
-    ('t','TRENDING'),
+    ('t','WORLD'),
     ('r','REVIEWS'),
 )
 
