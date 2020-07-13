@@ -34,7 +34,7 @@ class Slider(models.Model):
     def __str__(self):
         return self.title
 
-class trending_today(models.Model):
+class trending(models.Model):
     title = models.CharField(max_length=500)
     image = models.ImageField()
     slug = models.SlugField(max_length=50,unique=True)
@@ -42,7 +42,7 @@ class trending_today(models.Model):
     def __str__(self):
         return self.title
 
-class top_trending(models.Model):
+class news2(models.Model):
     title = models.CharField(max_length=500)
     image = models.ImageField()
     slug = models.SlugField(max_length=50,unique=True)

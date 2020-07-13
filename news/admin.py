@@ -1,7 +1,7 @@
 from django.contrib import admin
-from news.models import News,Slider,top_trending,trending_today
+from news.models import News, Slider, news2, trending
 
 admin.site.register(News)
 admin.site.register(Slider)
-admin.site.register(top_trending)
-admin.site.register(trending_today)
+admin.site.register(news2)
+admin.site.register(trending)
