@@ -7,7 +7,7 @@ body {
 }
 
 #articles h1{
-    font-size: 38px !important;
+    font-size: 37px !important;
 }
 
 
@@ -23,7 +23,7 @@ th h1{
 form{
     position: relative;
     margin-top: 40px;
-    margin-left: 60px;
+    margin-left: 69px;
     transform: translate(-28%,-50%);
     transition: all 1s;
     width: 50px;
@@ -66,8 +66,8 @@ input{
 }
 
 form:hover{
-    width: 350px;
-    cursor: pointer;
+    width: 400px;
+    cursor: none;
 }
 
 form:hover input{
