@@ -42,7 +42,7 @@ class trending(models.Model):
     def __str__(self):
         return self.title
 
-class news2(models.Model):
+class read(models.Model):
     title = models.CharField(max_length=500)
     image = models.ImageField()
     slug = models.SlugField(max_length=50,unique=True)
