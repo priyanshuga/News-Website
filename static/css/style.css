@@ -570,6 +570,26 @@ background-color: #FF6600
   background-color: #4B97D1;}
 
 
+#related h1{
+	width: 280px;
+	font-family: Georgia, serif;;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 27px;
+	text-shadow: 1px 1px 0 #000;
+	word-spacing: 2px;
+	margin-bottom: 5px;
+}
+
+#articles h3{
+	font-family: serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 20px;
+	text-shadow: 1px 1px 0 #000;
+	word-spacing: 2px;
+	margin-bottom: 5px;
+}
 #articles, #sidebar{
 	display: inline-block;
 	vertical-align: top;

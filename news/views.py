@@ -13,8 +13,9 @@ def thesocialbugg(request):
 
 def fullwidth(request,slug):
     news = News.objects.get(slug__iexact = slug)
+    related = News.objects.filter(category = news.category)[0:1]
     recent = News.objects.all().order_by('-created')[0:5]
-    return render(request, 'fullwidth.html', {'news':news,'recent':recent})
+    return render(request, 'fullwidth.html', {'news':news,'recent':recent,'related':related})
 
 def blog(request,category):
     news = News.objects.filter(category=category)

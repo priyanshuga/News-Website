@@ -44,7 +44,20 @@
 					<br/>
 					<div id="desc">
 						<pre>{{news.decription}}</pre>
-						<br>
+						<br><br>
+						<div id="related">
+							<h1><span>Related Posts<span></h1>
+							<br>
+							<div id="articles">
+								<article>
+									{% for obj in related %}
+										<a href="{% url 'fullwidth' obj.slug %}"><img src="{{obj.image}}" width="500" height="200" alt="" /></a>
+										<h3><a href="{% url 'fullwidth' obj.slug %}">{{obj.title}}</a></h3>
+										</br>
+									{% endfor %}
+								</article>
+							</div>
+						</div>
 					</div>
 				</article>
 			{% include 'sidebar.html' %}
