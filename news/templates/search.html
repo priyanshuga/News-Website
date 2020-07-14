@@ -27,7 +27,7 @@
                                     <h1>  </h1>
                                     <h1><a href="{% url 'fullwidth' obj.slug %}">{{ obj.title }}</a></h1>
                                     <h2>Posted By: Admin On {{ obj.created }} IST</h2>
-                                    <img src="{{obj.image.url}}" width="600" height="300" alt="" />
+                                    <img src="{{obj.image}}" width="600" height="300" alt="" />
                                     <p>{{obj.short_desc}} <a class="continue" href="{% url 'fullwidth' obj.slug %}">Continue Reading &rarr;</a></p>
 					            </article>
                         {% endfor %}

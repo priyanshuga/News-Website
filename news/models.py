@@ -16,7 +16,7 @@ class News(models.Model):
     title = models.CharField(max_length=500)
     short_desc = models.CharField(max_length=1000)
     decription = models.TextField(max_length=10000)
-    image = models.ImageField()
+    image = models.CharField(max_length=500)
     category = models.CharField(choices=CATEGORY_CHOICES , max_length=1 , default=0)
     created = models.DateTimeField(default=timezone.now)
 
@@ -28,7 +28,7 @@ class News(models.Model):
 
 class Slider(models.Model):
     title = models.CharField(max_length=500)
-    image_size_950x280 = models.ImageField()
+    image_size_950x280 = models.CharField(max_length=500)
     slug = models.SlugField(max_length=50,unique=True)
 
     def __str__(self):
@@ -36,7 +36,7 @@ class Slider(models.Model):
 
 class trending(models.Model):
     title = models.CharField(max_length=500)
-    image = models.ImageField()
+    image = models.CharField(max_length=500)
     slug = models.SlugField(max_length=50,unique=True)
     
     def __str__(self):
@@ -44,7 +44,7 @@ class trending(models.Model):
 
 class read(models.Model):
     title = models.CharField(max_length=500)
-    image = models.ImageField()
+    image = models.CharField(max_length=500)
     slug = models.SlugField(max_length=50,unique=True)
 
     def __str__(self):
