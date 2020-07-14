@@ -53,6 +53,7 @@
 									{% for obj in related %}
 										<a href="{% url 'fullwidth' obj.slug %}"><img src="{{obj.image}}" width="500" height="200" alt="" /></a>
 										<h3><a href="{% url 'fullwidth' obj.slug %}">{{obj.title}}</a></h3>
+										<p>{{obj.short_desc}} <a class="continue" href="{% url 'fullwidth' obj.slug %}">Continue Reading &rarr;</a></p>
 										</br>
 									{% endfor %}
 								</article>
