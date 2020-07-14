@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'news',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +119,10 @@ MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 django_heroku.settings(locals())
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hs22wlkmf',
+    'API_KEY': '536429287951494',
+    'API_SECRET': 'eGbKVOnRdGpthzKB54B0gza7DOw',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
