@@ -5,11 +5,11 @@
 			<section>
 				<article id="singlepost">
 					<h1><a href="#">{{news.title}}</a></h1>
-							{% if obj.category == 'r' %}
-								<h2>Posted By: Admin On {{ obj.created }} IST  <span id="review"> {{obj.reviews_tag}}</span></h2>
-							{% else %}
-								<h2>Posted By: Admin On {{ obj.created }} IST</h2>
-							{% endif %}
+					{% if obj.category == 'r' %}
+						<h2>Posted By: Admin On {{ news.created }} IST  <span id="review"> {{news.reviews_tag}}</span></h2>
+					{% else %}
+						<h2>Posted By: Admin On {{ news.created }} IST</h2>
+					{% endif %}
                     <div id="short">
                         <p><h2>{{news.short_desc}}<h2></p>
                     </div>
