@@ -51,8 +51,8 @@
                                     <table id="search">
                                         {% for obj in recent %}
                                             <td>
-                                                <a href="{% url 'fullwidth' obj.slug %}"><h3>{{obj.title}}</h3></a>
                                                 <img src="{{obj.image}}" width="250" height="150" alt=""/>
+                                                <a href="{% url 'fullwidth' obj.slug %}"><h3>{{obj.title}}</h3></a>
                                             </td>
                                         {% endfor %}
                                     </table>

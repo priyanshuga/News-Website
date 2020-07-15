@@ -16,6 +16,7 @@ REVIEWS_CHOICES = (
     (' ',' '),
     ('MOVIES','MOVIES'),
     ('SERIES','SERIES'),
+    ('ANIME','ANIME')
 )
 
 class News(models.Model):
@@ -23,6 +24,7 @@ class News(models.Model):
     short_desc = models.CharField(max_length=1000)
     image = models.CharField(max_length=500)
     decription = models.TextField(max_length=5000)
+    twitter = models.CharField(max_length=300,blank=True)
     youtube = models.CharField(max_length=1000,blank=True)
     description = models.TextField(max_length=5000,blank=True)
     category = models.CharField(choices=CATEGORY_CHOICES , max_length=1 , default=0)
