@@ -7,7 +7,7 @@
                         <th>
                             <div = "airticles"
                                 <article>
-                                    <h1>Search Here>></h1>
+                                    <h1><span>Search Here>></span></h1>
                                 </article>
                             </div>
                         </th>
@@ -46,10 +46,19 @@
                     {% else %}
                         <div id="articles">
 					            <article>
-                                    <h1>                                    </h1>
+                                    <h1>Also Read</h1>
+                                    <br>
+                                    <table id="search">
+                                        {% for obj in recent %}
+                                            <td>
+                                                <a href="{% url 'fullwidth' obj.slug %}"><h3>{{obj.title}}</h3></a>
+                                                <img src="{{obj.image}}" width="250" height="150" alt=""/>
+                                            </td>
+                                        {% endfor %}
+                                    </table>
                                 </article>
                         </div>
                     {% endif %}
-                    {% include 'sidebar.html' %}
+
                 </section>
 {% endblock body %}

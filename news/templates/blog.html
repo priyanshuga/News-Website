@@ -8,7 +8,13 @@
 					<article>
 						{% for obj in news %}
 							<h1><a href="{% url 'fullwidth' obj.slug %}">{{ obj.title }}</a></h1>
-							<h2>Posted By: Admin On {{ obj.created }} IST</h2>
+							
+							{% if obj.category == 'r' %}
+								<h2>Posted By: Admin On {{ obj.created }} IST  <span id="review"> {{obj.reviews_tag}}</span></h2>
+							{% else %}
+								<h2>Posted By: Admin On {{ obj.created }} IST</h2>
+							{% endif %}
+							
 							<a href="{% url 'fullwidth' obj.slug %}"><img src="{{obj.image}}" width="600" height="300" alt="" /></a>
 							<p>{{obj.short_desc}} <a class="continue" href="{% url 'fullwidth' obj.slug %}">Continue Reading &rarr;</a></p>
 							<br>

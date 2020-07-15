@@ -275,6 +275,11 @@ span {
 	background-color: rgb(146, 6, 6);
 }
 
+#review{
+	font-weight: bold;
+	font-size: 15px;
+}
+
 #line h1{
 	font-family: LeagueGothic, Impact, sans-serif;
 	font-weight: normal;
@@ -376,6 +381,13 @@ span {
 }
 #latestp{
 	margin-left: 20px;
+}
+
+#search{
+		border-collapse: separate;
+		border-spacing: 50px 0;
+		margin-left: auto;
+		margin-right: auto;
 }
 
 table{

@@ -7,18 +7,27 @@ CATEGORY_CHOICES = (
     ('p','NEWS'),
     ('y','YOUTH'),
     ('e','ENTERTAINMENT'),
-    ('c','COVID-19'),
+    ('c','GAMES'),
     ('t','WORLD'),
     ('r','REVIEWS'),
+)
+
+REVIEWS_CHOICES = (
+    (' ',' '),
+    ('MOVIES','MOVIES'),
+    ('SERIES','SERIES'),
 )
 
 class News(models.Model):
     title = models.CharField(max_length=500)
     short_desc = models.CharField(max_length=1000)
-    decription = models.TextField(max_length=10000)
     image = models.CharField(max_length=500)
+    decription = models.TextField(max_length=5000)
+    youtube = models.CharField(max_length=1000,blank=True)
+    description = models.TextField(max_length=5000,blank=True)
     category = models.CharField(choices=CATEGORY_CHOICES , max_length=1 , default=0)
     created = models.DateTimeField(default=timezone.now)
+    reviews_tag = models.CharField(choices=REVIEWS_CHOICES, max_length=6, default=0)
 
     slug = models.SlugField(max_length=50,unique=True)
 

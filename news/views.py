@@ -18,7 +18,7 @@ def fullwidth(request,slug):
     return render(request, 'fullwidth.html', {'news':news,'recent':recent,'related':related})
 
 def blog(request,category):
-    news = News.objects.filter(category=category)
+    news = News.objects.filter(category=category).order_by('-created')
     recent = News.objects.all().order_by('-created')[0:5]
     paginator = Paginator(news,4)
     page = request.GET.get('page')
@@ -34,7 +34,7 @@ def privacy(request):
     return render(request, 'privacy.html', {'recent':recent})
 
 def search(request):
-    recent = News.objects.all().order_by('-created')[0:5]
+    recent = News.objects.all().order_by('-created')[0:3]
     if request.GET.get('s'): # this will be GET now      
         news_title =  request.GET.get('s') # do some research what it does       
         try:
