@@ -26,6 +26,7 @@ class News(models.Model):
     decription = models.TextField(max_length=5000)
     twitter = models.CharField(max_length=300,blank=True)
     youtube = models.CharField(max_length=1000,blank=True)
+    img = models.CharField(max_length=500,blank=True)
     description = models.TextField(max_length=5000,blank=True)
     category = models.CharField(choices=CATEGORY_CHOICES , max_length=1 , default=0)
     created = models.DateTimeField(default=timezone.now)
