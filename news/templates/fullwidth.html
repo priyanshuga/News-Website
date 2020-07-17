@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block head %}
-	<meta name="description" content="{{news.title}}"> <meta name="keywords" content="{{news.keyword}}"> 
+	<meta name="robots" content= "index, follow">
+	<meta name="description" content="{{news.title}}"> <meta name="keywords" content="{{news.keyword}}">
+	<link rel="canonical" href="https://thesocialbugg.herokuapp.com/fullwidth/{{ news.slug }}"/>
 {% endblock head %}
 
 {% block body %}
