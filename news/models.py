@@ -4,12 +4,12 @@ from django.utils import timezone
 from django.utils.crypto import get_random_string
 
 CATEGORY_CHOICES = (
-    ('p','NEWS'),
-    ('y','YOUTH'),
-    ('e','ENTERTAINMENT'),
-    ('c','GAMES'),
-    ('t','WORLD'),
-    ('r','REVIEWS'),
+    ('news','NEWS'),
+    ('youth','YOUTH'),
+    ('entertainment','ENTERTAINMENT'),
+    ('games','GAMES'),
+    ('world','WORLD'),
+    ('reviews','REVIEWS'),
 )
 
 REVIEWS_CHOICES = (
@@ -28,7 +28,7 @@ class News(models.Model):
     youtube = models.CharField(max_length=1000,blank=True)
     img = models.CharField(max_length=500,blank=True)
     description = models.TextField(max_length=5000,blank=True)
-    category = models.CharField(choices=CATEGORY_CHOICES , max_length=1 , default=0)
+    category = models.CharField(choices=CATEGORY_CHOICES , max_length=13 , default=0)
     created = models.DateTimeField(default=timezone.now)
     reviews_tag = models.CharField(choices=REVIEWS_CHOICES, max_length=6, default=0)
 
