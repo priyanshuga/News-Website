@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+	<meta name="description" content="{{news.title}}"> <meta name="keywords" content="{{news.keyword}}"> 
+{% endblock head %}
+
 {% block body %}
 			<!--__--__--__--__--  M A I N   C O N T E N T  --__--__--__--___--__--__-->
 			<section>
