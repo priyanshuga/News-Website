@@ -18,7 +18,13 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from news import views
+from django.contrib.sitemaps.views import sitemap
+from news.sitemaps import StaticSitemap, NewsSitemap
 
+sitemaps = {
+    'static': StaticSitemap,
+    'news': NewsSitemap,
+}
 
 
 
@@ -31,6 +37,7 @@ urlpatterns = [
     path('privacy/', views.privacy, name='privacy'),
     path('search/', views.search, name='search'),
     path('notfound/', views.notfound, name='notfound'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.utils import timezone
+from django.urls import reverse
 from django.utils.crypto import get_random_string
 
 CATEGORY_CHOICES = (
@@ -37,7 +38,6 @@ class News(models.Model):
     
     def __str__(self):
         return self.title
-
 class Slider(models.Model):
     title = models.CharField(max_length=500)
     image_size_950x280 = models.CharField(max_length=500)
