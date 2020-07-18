@@ -7,7 +7,6 @@ class StaticSitemap(Sitemap):
     def items(self):
         return [
             '',
-            'blog',
         ]
 
     def location(self, item):
