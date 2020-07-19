@@ -2,12 +2,13 @@
 {% load static %}
 {% block head %}
 	<meta name="robots" content= "index, follow">
-	<meta name="description" content="{{news.title}}"> <meta name="keywords" content="{{news.keyword}}">
+	<meta name="description" content="{{news.head_desc}}"> <meta name="keywords" content="{{news.keyword}}">
 	<link rel="canonical" href="https://thesocialbugg.herokuapp.com/fullwidth/{{ news.slug }}"/>
 	<meta property="og:title" content="Centre&#x27;s &#x27;Surplus&#x27; {{news.title}}"/><meta property="og:url" content="https://thesocialbugg.herokuapp.com/fullwidth/{{news.slug}}"/><meta property="og:image" content="{{news.image}}"/><meta property="og:description" content="{{news.description}}"/><meta property="og:site_name" content="The Social Bugg"/>
 	<meta name="twitter:title" content="{{news.title}}">
 	<meta name="twitter:description" content="{{news.decription}}">
 	<meta name="twitter:image" content="{{news.image}}">
+	<title>{{news.head}}</title>
 {% endblock head %}
 
 {% block body %}
