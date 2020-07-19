@@ -21,8 +21,8 @@ REVIEWS_CHOICES = (
 )
 
 class News(models.Model):
-    #head = models.CharField(max_length=66)
-    #head_desc = models.CharField(max_length=157)
+    head = models.CharField(max_length=66)
+    head_desc = models.CharField(max_length=157)
     title = models.CharField(max_length=500)
     short_desc = models.CharField(max_length=1000)
     image = models.CharField(max_length=500)
