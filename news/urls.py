@@ -19,11 +19,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from news import views
 from django.contrib.sitemaps.views import sitemap
-from news.sitemaps import StaticSitemap, NewsSitemap
+from news.sitemaps import StaticSitemap, FullwidthSitemap
 
 sitemaps = {
-    'static': StaticSitemap,
-    'news': NewsSitemap,
+    'static' : StaticSitemap,
+    'fullwidth': FullwidthSitemap,
 }
 
 
