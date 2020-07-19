@@ -21,6 +21,8 @@ REVIEWS_CHOICES = (
 )
 
 class News(models.Model):
+    head = models.CharField(max_length=60)
+    head_desc = models.CharField(max_length=150)
     title = models.CharField(max_length=500)
     short_desc = models.CharField(max_length=1000)
     image = models.CharField(max_length=500)
@@ -32,7 +34,7 @@ class News(models.Model):
     category = models.CharField(choices=CATEGORY_CHOICES , max_length=13 , default=0)
     created = models.DateTimeField(default=timezone.now)
     reviews_tag = models.CharField(choices=REVIEWS_CHOICES, max_length=6, default=0)
-    keyword = models.CharField(max_length=1000)
+    keyword = models.CharField(max_length=60)
     slug = models.SlugField(max_length=255,unique=True)
 
     
