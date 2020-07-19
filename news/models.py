@@ -35,7 +35,7 @@ class News(models.Model):
     created = models.DateTimeField(default=timezone.now)
     reviews_tag = models.CharField(choices=REVIEWS_CHOICES, max_length=6, default=0)
     #keyword = models.CharField(max_length=1000)
-    slug = models.SlugField(max_length=50,unique=True)
+    slug = models.SlugField(max_length=255,unique=True)
 
     
     def __str__(self):
