@@ -1,8 +1,11 @@
 ## News- Website - [The Social Bugg](https://thesocialbugg.herokuapp.com)
 ---
-** My Feature **
+**My Feature**
+
 👉 You can easily post any news from portal
+
 👉 Seo also included
+
 👉 Easy to deploy
 
 ## Installation for windows
@@ -39,6 +42,6 @@ loaclhost:8000
 ```
 Done👍
 
-# Credits
+## Credits
 
 [Priyanshu](https://t.me/priyanshugandhi)
