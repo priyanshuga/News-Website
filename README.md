@@ -34,6 +34,14 @@ Now to run django project in local server (first enter to location where manage.
 ```sh
 cd pathto
 python manage.py migrate
+```
+Create super user for admain page:
+```sh
+python manage.py createsuperuser
+```
+It will ask for username, email and password
+Now you can run django on your local server
+```sh
 python manage.py runserver
 ```
 Now open chrome and type
