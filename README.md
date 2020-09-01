@@ -20,7 +20,7 @@ cd my_project
 ```
 Once inside the project folder run: 
 ```sh
-virtualenv env
+py -m venv env
 ```
 To activate virtualenv on Windows, and activate the script is in the Scripts folder :
 ```sh
