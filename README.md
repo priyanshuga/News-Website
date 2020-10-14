@@ -26,9 +26,9 @@ To activate virtualenv on Windows, and activate the script is in the Scripts fol
 ```sh
 env\Scripts\activate
 ```
-Then Install Django
+Then Install Requirements.txt
 ```sh
-pip install django
+pip install -r requirements.txt
 ```
 Now to run django project in local server (first enter to location where manage.py is located suppose loacted at pathto)
 ```sh
